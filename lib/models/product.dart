@@ -4,6 +4,7 @@ class ProductModel {
   final int id;
   final String name, description;
   final double price, rate;
+  bool isFavorite;
 
   ProductModel({
     @required this.id,
@@ -11,6 +12,7 @@ class ProductModel {
     @required this.description,
     @required this.price,
     @required this.rate,
+    @required this.isFavorite,
   });
 
   static ProductModel fromJson(Map<String, dynamic> json) {
@@ -20,6 +22,7 @@ class ProductModel {
       description: json['Description'],
       price: json['Price']?.toDouble() ?? 0.0,
       rate: json['Rating Avg']?.toDouble() ?? 0.0,
+      isFavorite: json['is Favorite'] ?? false,
     );
   }
 }

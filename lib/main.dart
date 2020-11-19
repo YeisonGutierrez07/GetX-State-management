@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_state_management/pages/reactive_page.dart';
 import 'package:getx_state_management/pages/splash_page.dart';
 
 import 'controllers/global_controller.dart';
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashPage(),
+      // home: SplashPage(),
+      home: ReactivePage(),
     );
   }
 }
