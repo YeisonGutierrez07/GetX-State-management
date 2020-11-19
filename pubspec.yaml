@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   get: ^3.17.1
   dio: ^3.0.10
+  faker: ^1.3.0
 
 dev_dependencies:
   flutter_test:

@@ -4,6 +4,7 @@ import 'package:getx_state_management/pages/reactive_page.dart';
 import 'package:getx_state_management/pages/splash_page.dart';
 
 import 'controllers/global_controller.dart';
+import 'controllers/socket_client_controller.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(GlobalController());
+    Get.put(SocketClientController());
     return GetMaterialApp(
       title: 'Wixu App',
       theme: ThemeData(

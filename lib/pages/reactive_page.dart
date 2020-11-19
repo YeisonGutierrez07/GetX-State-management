@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/state_manager.dart';
+
 import 'package:getx_state_management/controllers/reactive_controller.dart';
+import 'package:getx_state_management/controllers/socket_client_controller.dart';
 
 class ReactivePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SocketClientController socketClientController =
+        Get.find<SocketClientController>();
     return SafeArea(
       child: GetBuilder<ReactiveController>(
         init: ReactiveController(),
@@ -83,6 +87,12 @@ class ReactivePage extends StatelessWidget {
                         onPressed: () => _.addAgeMyPet(_.myPet.age + 1),
                       )
                     ],
+                  ),
+                ),
+                Text("Estado global reactivo"),
+                Expanded(
+                  child: Obx(
+                    () => Text(socketClientController.message.value),
                   ),
                 )
               ],
